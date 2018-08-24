@@ -29,3 +29,6 @@ echo '配置错误';
 
 而fpm-for-windows是一个真正的windows下实现多个php-cgi进程同时工作的集成环境. 
 
+<img src="https://github.com/gaohuia/fpm-for-windows/raw/master/ui.png" width="800" />
+<img src="https://github.com/gaohuia/fpm-for-windows/raw/master/ui.png" width="800" />
+
