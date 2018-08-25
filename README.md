@@ -29,6 +29,17 @@ echo '配置错误';
 
 而fpm-for-windows是一个真正的windows下实现多个php-cgi进程同时工作的集成环境. 
 
+## 基本原理
+
+golang充当fpm, electron编写的界面. 
+
+* fpm-for-windows.exe充当一个fpm的角色监听在9001端口
+* fpm-for-windows.exe启动多个php-cgi进程分别监听在比如127.0.0.2:30001~127.0.0.2:30005
+* fpm-for-windows.exe与上述127.0.0.2:N端口建立连接并放到一个连接池中.
+* fpm-for-windows.exe将nginx发到9001端口的fastcgi请求路由到一个空闲的php-cgi连接进行处理并发回相应的输出.
+
+## 界面预览
+
 <img src="https://github.com/gaohuia/fpm-for-windows/raw/master/ui.png" width="800" />
 <img src="https://github.com/gaohuia/fpm-for-windows/raw/master/ui.png" width="800" />
 
